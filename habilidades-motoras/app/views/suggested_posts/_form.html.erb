@@ -1,0 +1,27 @@
+<%= form_with(model: suggested_post, local: true) do |form| %>
+  <% if suggested_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(suggested_post.errors.count, "error") %> prohibited this suggested_post from being saved:</h2>
+
+      <ul>
+      <% suggested_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :form_id %>
+    <%= form.number_field :form_id, id: :suggested_post_form_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publication_id %>
+    <%= form.number_field :publication_id, id: :suggested_post_publication_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

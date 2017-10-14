@@ -1,0 +1,2 @@
+class SuggestedPost < ApplicationRecord
+end
